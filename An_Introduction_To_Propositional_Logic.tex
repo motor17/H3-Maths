@@ -1,0 +1,327 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{color}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz,lipsum,lmodern}
+\usepackage{xcolor}
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{remark}{Remark}[subsection]
+\newtheorem{idea}{Idea}[subsection]
+\newtheorem{method}{Method}[subsection]
+\newtheorem{example}{Example}[subsection]
+
+
+
+\title{An Introduction to Propositional Logic}
+\author{Aadvik Mohta}
+\date{Dunman High School}
+
+\begin{document}
+
+\maketitle
+
+\section{Propositions}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]
+ A $\textbf{proposition}$ is a declarative sentence that is either true or false, but not both.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=cyan!5!white,colframe=cyan!75!black,title=\begin{remark}  
+\end{remark}]
+ The $\textbf{truth value}$ of a proposition is T(true) if it is a true proposition and the truth value of a proposition is F(false) if it is a false proposition.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=cyan!5!white,colframe=cyan!75!black,title=\begin{remark}
+\end{remark}]
+We use letters to denote propositional variables just as we use to denote numerical variables.
+\end{tcolorbox}
+\subsection{Logical Operators}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]
+Let $p$ be a proposition. The $\textbf{negation}$ of $p$ is denoted by $\neg p$ and is the proposition 'it is not the case that $p$'. The truth value of $\neg p$ is opposite of the truth value of $p$.
+\end{tcolorbox}
+The truth table for $\neg p$ is shown below.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        $p$ & $\neg p$ \\ \hline
+        T & F\\ \hline
+        F & T\\ \hline
+    \end{tabular}
+\end{table}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]
+Let $p$ and $q$ be propositions. The $\textbf{conjunction}$ of $p$ and $q$ is denoted by $p\wedge q$ and is the proposition '$p$ and $q$'. The conjunction $p \wedge q$ is true when both $p$ and $q$ are true and is false otherwise.
+\end{tcolorbox}
+The truth table for $p \wedge q$ is shown below.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+     $p$ & $q$& $p \wedge q$\\ \hline
+     T  & T & T\\ \hline
+     T & F &F\\ \hline
+     F&T&F\\ \hline
+     F&F&F\\ \hline
+    \end{tabular}
+\end{table}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]   
+Let $p$ and $q$ be propositions. The $\textbf{disjunction}$ of $p$ and $q$ is denoted by $p \lor q $ and is the proposition '$p$ or $q$'. The disjunction $p \lor q$ is false when both $p$ and $q$ are false and is true otherwise.
+\end{tcolorbox}
+The truth table for $p \lor q$ is shown below.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+     $p$ & $q$& $p \lor q$\\ \hline
+     T  & T & T\\ \hline
+     T & F &F\\ \hline
+     F&T&F\\ \hline
+     F&F&F\\ \hline
+    \end{tabular}
+\end{table}
+\subsection{Conditional Statements}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}] 
+Let $p$ anf $q$ be propositions. The $\textbf{conditional statement}$ $p\implies q$ is the proposition 'if $p$, then $q$'. The conditional statement is false when $p$ is true and $q$ is false, and is true otherwise. 
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=cyan!5!white,colframe=cyan!75!black,title=\begin{remark}
+\end{remark}]    
+In the conditional statement $p \implies q$, $p$ is commonly called the hypothesis and $q$ is commonly called the conclusion.
+\end{tcolorbox}
+\newpage
+The truth table for the conditional statement $p \implies q$ is shown below.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+     $p$ & $q$& $p \implies q$\\ \hline
+     T  & T & T\\ \hline
+     T & F &F\\ \hline
+     F&T&T\\ \hline
+     F&F&T\\ \hline
+    \end{tabular}
+\end{table}
+\begin{tcolorbox}
+[colback=cyan!5!white,colframe=cyan!75!black,title=\begin{remark}
+\end{remark}]
+A reason why the truth table of $p \implies q$ has truth values as such comes from the fact that $p \implies q$ is logically equivalent to $\neg p \lor q$.  Alternatively, this is equivalent to the statement '$p$ only if $q$'.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]    
+The $\textbf{contrapositive}$ of $p\implies q $ is the proposition $\neg q\implies \neg p$.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=cyan!5!white,colframe=cyan!75!black,title=\begin{remark}
+\end{remark}]    
+In addition to the contrapositive, we also have the inverse and converse of a conditional statement. Consider a conditional statement $p\implies q$. Then the converse of the conditional statement is $q\implies p$ and the inverse of the conditional statement is $\neg p\implies \neg q$. 
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]    
+When two compound propositions have the same truth values, regardless of the truth values of its propositional variables, we call them $\textbf{equivalent}$.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=orange!5!white,colframe=orange!75!black,title=\begin{idea}
+\end{idea}]
+A truth table can be used to check whether two compound propositions are logically equivalent.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]
+Let $p$ and $q$ be propositions. The biconditional statement $p \iff q$ is the proposition $p$ if and only if $q$. $p \iff q$ is true when $p$ and $q$ have the same truth values, and is false otherwise.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=red!5!white,colframe=red!75!black,title=\begin{example}
+\end{example}] 
+We construct a truth table for the compound proposition $$(p\lor \neg q)\implies (p\wedge q)$$.
+\end{tcolorbox}
+\begin{table}[h]
+      \centering
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $p$&$q$&$\neg q$&$p\lor\neg q$&$p\wedge q$&$(p\lor \neg q)\implies (p\wedge q)$\\ \hline
+      T&T&F&T&T&T\\ \hline
+      T&F&T&T&F&F\\ \hline
+      F&T&F&F&F&T\\ \hline
+      F&F&T&T&F&F\\ \hline
+      \end{tabular}
+\end{table}   
+\subsection{Precedence of Logical Operators}
+\begin{tcolorbox}
+[colback=cyan!5!white,colframe=cyan!75!black,title=\begin{remark}
+\end{remark}]
+The precedence of the logical operators, in order from least important to most important, is:\\
+$\iff,\implies,\lor,\wedge,\neg$
+\end{tcolorbox}
+\section{Propositional Equivalences}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]
+A \textbf{tautology} is a compound proposition that is always true, no matter what the truth values of the propositional variables that occur in it are.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}] 
+A \textbf{contradiction} is a compound proposition that is always false.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=red!5!white,colframe=red!75!black,title=\begin{example}
+\end{example}]
+We show the truth tables for examples of a tautology and a contradiction. Note that $p \lor \neg p$ is a tautology and $p \wedge \neg p$ is a contradiction here.
+\end{tcolorbox}
+\begin{table}[h]
+       \centering
+       \begin{tabular}{|c|c|c|c|}
+       \hline
+       $p$&$\neg p$&$p\lor \neg p$&$p\wedge \neg p$\\ \hline
+       T&F&T&F\\ \hline
+       F&T&T&F\\ \hline
+       \end{tabular}
+\end{table}  
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]
+The compound propositions $p$ and $q$ are $\textbf{logically equivalent}$ if $p\iff q$ is a tautology. The notation $p\equiv q$ denotes that $p$ and $q$ are logically equivalent.
+\end{tcolorbox}
+\subsection{De Morgan's Laws}
+\begin{tcolorbox}
+[colback=green!5!white,colframe=green!75!black,title=\begin{theorem}
+\end{theorem}]
+De Morgan's Laws are defined as following:
+$$\neg (p\wedge q)\equiv\neg p \lor \neg q$$
+$$\neg(p \lor q)\equiv \neg p \wedge \neg q$$
+\end{tcolorbox}
+We show that De Morgan's Laws hold by using truth tables to establish that $\neg (p\wedge q)\iff\neg p \lor \neg q$ and $\neg(p \lor q)\iff \neg p \wedge \neg q$ are tautologies.
+\begin{tcolorbox}
+[colback=red!5!white,colframe=red!75!black,title=\begin{example}
+\end{example}] 
+Show that $\neg(p \lor q)$ and $\neg p \wedge \neg q$ are logically equivalent.
+\end{tcolorbox}
+We construct the following truth table.
+\begin{table}[h]
+      \centering
+      \begin{tabular}{|c|c|c|c|c|c|c|}
+      \hline
+           $p$&$q$&$p\lor q$&$\neg(p\lor q)$&$\neg p$&$\neg q$&$\neg  p\wedge \neg q$ \\ \hline
+           T&T&T&F&F&F&F\\ \hline
+           T&F&T&F&F&T&F\\ \hline
+           F&T&T&F&T&F&F\\ \hline
+           F&F&F&T&T&T&T\\ \hline
+      \end{tabular}
+\end{table}
+\begin{tcolorbox}
+[colback=red!5!white,colframe=red!75!black,title=\begin{example}
+\end{example}]
+Show that $\neg (p \wedge q)$ and $\neg p\lor \neg q$ are logically equivalent.
+\end{tcolorbox}
+We construct the following truth table.
+\begin{table}[h]
+      \centering
+      \begin{tabular}{|c|c|c|c|c|c|c|}
+      \hline
+            $p$&$q$&$p\wedge q$&$\neg(p\wedge q)$&$\neg p$&$\neg q$&$\neg p\lor \neg q$ \\ \hline
+            T&T&T&F&F&F&F\\ \hline
+            T&F&F&T&F&T&T\\ \hline
+            F&T&F&T&T&F&T\\ \hline
+            F&F&F&T&T&T&T\\ \hline
+        \end{tabular}
+\end{table}
+\begin{tcolorbox}
+[colback=cyan!5!white,colframe=cyan!75!black,title=\begin{remark}
+\end{remark}]
+The following are some examples of logical equivalences.
+De Morgan's Laws: $\neg (p\wedge q)\equiv \neg p\lor \neg q$\\
+Conditional-Disjunction Equivalence: $p\implies q\equiv \neg p\lor q$\\
+Contrapositive: $p\implies q\equiv \neg q\implies \neg p$\\
+Conjunction-Conditional Equivalence: $p\lor q\equiv\neg p\implies q$
+\end{tcolorbox}
+\section{Logical Quantifiers}
+\subsection{Propositional Functions}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]
+The statement $P(x)$ is the $\textbf{propositional function}$ $P$ at $x$. Once a value has been assigned to $x$, the statement $P(x)$ becomes a proposition and has a truth value.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=red!5!white,colframe=red!75!black,title=\begin{example}
+\end{example}]
+Let $P(x,y)$ denote the statement "$x=y+3$". Then $P(1,2)$ is the proposition "$1=2+3$" which is false and $P(3,0)$ is the proposition "$3=0+3$" which is true.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=red!5!white,colframe=red!75!black,title=\begin{example}
+\end{example}]
+Let $R(x,y,z)$ denote the statement '$x+y=z$. Then $R(1,2,3)$ is the proposition '$1+2=3$' which is true, and $R(0,0,1)$ is the proposition '$0+0=1$', which is false.
+\end{tcolorbox}
+\subsection{Quantifiers}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]
+The $\textbf{universal quantification}$ of $P(x)$ is the statement "$P(x)$ for all values of $x$ in the domain". The notation $\forall xP(x)$ denotes the universal quantification of $P(x)$. Here, $\forall$ is called the $\textbf{universal quantifier}$. An element for which $P(x)$ is false is called a $\textbf{counterexample}$ to $\forall xP(x)$.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=red!5!white,colframe=red!75!black,title=\begin{example}
+\end{example}]
+Let $P(x)$ be the statement "$x+1>x$", where the domain consists of all real numbers. Then the quantification $\forall xP(x)$ is true because $P(x)$ is true for all real numbers $x$.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]
+The $\textbf{existential quantification}$ of $P(x)$ is the proposition "there exists an element $x$ in the domain such that $P(x)$". The notation $\exists xP(x)$ is used for the existential quantification of $P(x)$ and $\exists$ is called the $\textbf{existential quantifier}$.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=cyan!5!white,colframe=cyan!75!black,title=\begin{remark}
+\end{remark}]
+The statement $\forall xP(x)$ is true when $P(x)$ is true for every $x$, and is false when there is an $x$ for which $P(x)$ is false. The statement $\exists xP(x)$ is true when there is an $x$ for which $P(x)$ is true, and is false when $P(x)$ is false for every $x$.
+\end{tcolorbox}
+\subsection{De Morgan's Laws for Quantifiers}
+\begin{tcolorbox}
+[colback=blue!5!white,colframe=blue!75!black,title=\begin{definition}
+\end{definition}]
+Statements involving quantifiers are logically equivalent if and only if they have the same truth value no matter which predicates are substituted into these statements and which domain of discourse is used for the variables in these propositional functions. The notation $S\equiv T$ indicates that two statements with quantifiers are logically equivalent.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=green!5!white,colframe=green!75!black,title=\begin{theorem}
+\end{theorem}]
+De Morgan's Laws for Quantifiers are as follows.
+$$\neg \exists xP(x)\equiv \forall x\neg P(x)$$
+$$\neg \forall xP(x)\equiv \exists x\neg P(x)$$
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=cyan!5!white,colframe=cyan!75!black,title=\begin{remark}
+\end{remark}]
+The quantifiers $\forall$ and $\exists$ have higher precedence than all logical variables from propositional logic.
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=cyan!5!white,colframe=cyan!75!black,title=\begin{remark}
+\end{remark}]
+To show that $\neg \forall xP(x)$ and $\exists x\neg P(x)$ are logically equivalent, consider the following argument.\\
+$\longrightarrow$ Note that $\neg \forall xP(x)$ is true if and only if $\forall xP(x)$ is false.\\
+$\longrightarrow$ Note that $\forall xP(x)$ is false if and only if there is an element $x$ in the domain for which $P(x)$ is false. This holds if and only if there is an element $x$ in the domain for which $\neg P(x)$ is true.\\
+$\longrightarrow$ Finally,note that there is an element $x$ in the domain for which $\neg P(x)$ is true if and only if $\exists x\neg P(x)$ is true. Therefore $\neg\forall xP(x)$ is true if and only if $\exists x\neg P(x)$ is true. It thus follows that $\neg \forall xP(x)$ and $\exists x\neg P(x)$ are logically equivalent. \qed
+\end{tcolorbox}
+\begin{tcolorbox}
+[colback=cyan!5!white,colframe=cyan!75!black,title=\begin{remark}
+\end{remark}]
+To show that $\neg \exists xQ(x)$ and $\forall x\neg Q(x)$ are logically equivalent, consider the following argument.\\
+$\longrightarrow$ Note that $\neg \exists xQ(x)$ is true if and only if $\exists xQ(x)$ is false. This is true if and only if no $x$ exists in the domain for which $Q(x)$ is true.\\
+$\longrightarrow$ Note that no $x$ exists in the domain for which $Q(x)$ is true if and only if $Q(x)$ is false for every $x$ in the domain.\\
+$\longrightarrow$ Finally, note that $Q(x)$ is false for every $x$ in the domain if and only if $\neg Q(x)$ is true for all $x$ in the domain, which holds if and only if $\forall x\neg Q(x)$ is true.\\
+Therefore $\neg \exists xQ(x)$ is true if and only if $\forall x\neg Q(x)$ is true. It thus follows that $\neg\exists xQ(x)$ and $\forall x\neg Q(x)$ are logically equivalent \qed
+\end{tcolorbox}
+\end{document}
